@@ -1,3 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+
+$lightGray: hsl(212, 45%, 89%);
+$grayishBlue: hsl(220, 15%, 55%);
+$darkBlue: hsl(218, 44%, 22%);
+$fontParagraph: 1rem;
+
+@mixin flexCenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin roundedBorder($border) {
+    border-radius: $border
+}
+
 body{
- 
+    @include flexCenter();
+    height: 100vh;
+    background-color: $lightGray;
+    font-family: 'Outfit', sans-serif;
+}
+
+
+.card{
+    @include flexCenter();
+    @include roundedBorder(1rem);
+    max-height: 495px;
+    max-width: 318px;
+    background-color: white;
+    padding: 1rem;
+    
+    .card--img{
+        @include roundedBorder(1rem);
+        height: 288px;
+        width: 100%;
+    }
+
+    .card--text{
+        padding: 1rem;
+        text-align: center;
+
+        .card--title{
+            color: $darkBlue;
+        }
+
+        .card--desc{
+            color: $grayishBlue;
+        }
+    }
 }
